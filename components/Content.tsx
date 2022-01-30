@@ -4,8 +4,7 @@ import styles from '../styles/components/Content.module.scss';
 
 interface Props {
     title: string;
-    // eslint-disable-next-line no-undef
-    children: JSX.Element
+    children: JSX.Element;
 }
 
 export default function Content({ children, title }: Props) {

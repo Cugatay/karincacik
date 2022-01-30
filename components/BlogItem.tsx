@@ -6,7 +6,6 @@ import useIsMobile from '../hooks/useIsMobile';
 interface Props {
   index: number;
   selected: number | null;
-  // eslint-disable-next-line no-unused-vars
   setSelected: (i: number) => void;
 }
 
