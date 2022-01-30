@@ -1,0 +1,9 @@
+@import '../variables';
+
+.container {
+  @media only screen and (min-width: $tablet) {
+    padding: 40px;
+  }
+
+  padding: 20px 12px;
+}

@@ -1,0 +1,37 @@
+@import '../variables';
+
+.content {
+    background-color: #212121;
+    padding: 20px 0 12px 0;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    max-width: 1600px;
+
+    @media only screen and (min-width: $tablet) {
+        margin-bottom: 80px;
+    }
+
+    .header {
+        @media only screen and (min-width: $tablet) {
+            font-size: 48px;
+            text-align: start;
+            margin-left: 20px;
+        }
+
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .blogContainer {
+        @media only screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        display: block;
+        flex-wrap: unset;
+    }
+}
