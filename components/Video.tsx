@@ -13,6 +13,7 @@ export default function Video() {
 
       <div className={styles.info}>
         <div className={styles.header}>#KÇ5 KELEPİR GECKO TERARYUMU - KARGO AÇILIM VE</div>
+        {/* eslint-disable-next-line max-len */}
         <div className={styles.description}>Kaldigimiz yerden devam! Bu bölümde transfer ettiğimiz Camponotus Sanctus kolonisini, Burak ve Fahriye için aldiğimiz yeni / geniş teraryumu ve basitçe kargo açilimi izleyecekseniz. Umarim beğenirsiniz. İyi seyirler!</div>
       </div>
 
