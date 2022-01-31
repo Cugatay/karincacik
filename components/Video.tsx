@@ -1,19 +1,12 @@
-import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import useIsMobile from '../hooks/useIsMobile';
 import styles from '../styles/components/Video.module.scss';
 
 export default function Video() {
-  const isMobile = useIsMobile();
-
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <motion.div
+    <div
       className={styles.container}
-      onHoverStart={() => setIsHovering(true)}
-      onHoverEnd={() => setIsHovering(false)}
     >
       <div className={styles.top}>
         <div className={styles.thumbnail}>
@@ -27,15 +20,11 @@ export default function Video() {
 
         {
           !isPlaying
-          && (isMobile ? (
-            <button type="button" className={styles.play} onClick={() => setIsPlaying(true)}>
-              <img src="/icons/play.svg" alt="oynat" />
-            </button>
-          ) : (
-            <motion.button initial={{ opacity: 0, scale: 0, y: 200 }} transition={{ duration: 0.6, type: 'spring' }} animate={isHovering ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0, y: 200 }} whileHover={{ backgroundColor: 'rgba(158, 158, 158, 0.8)' }} type="button" className={styles.play} onClick={() => setIsPlaying(true)}>
-              <img src="/icons/play.svg" alt="oynat" />
-            </motion.button>
-          ))
+          && (
+          <button type="button" className={styles.play} onClick={() => setIsPlaying(true)}>
+            <img src="/icons/play.svg" alt="oynat" />
+          </button>
+          )
         }
       </div>
 
@@ -49,18 +38,7 @@ export default function Video() {
           <div className={styles.description}>Kaldigimiz yerden devam! Bu bölümde transfer ettiğimiz Camponotus Sanctus kolonisini, Burak ve Fahriye için aldiğimiz yeni / geniş teraryumu ve basitçe kargo açilimi izleyecekseniz. Umarim beğenirsiniz. İyi seyirler!</div>
         </div>
 
-        <motion.div
-          initial={{
-            opacity: 0, scale: 0, marginTop: '-60px',
-          }}
-          transition={{ duration: 0.6, type: 'spring' }}
-          animate={isHovering ? {
-            opacity: 1, scale: 1, marginTop: '0px',
-          } : {
-            opacity: 0, scale: 0, marginTop: '-60px',
-          }}
-          className={styles.bottom}
-        >
+        <div className={styles.bottom}>
           <div className={styles.bottomInfo}>
             <img src="/icons/view.svg" alt="izlenme" />
             <div>132.000</div>
@@ -70,20 +48,8 @@ export default function Video() {
             <img src="/icons/thumb_up.svg" alt="beğeni" />
             <div>32K</div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
-
-// <div className={styles.bottom}>
-//   <div className={styles.bottomInfo}>
-//     <img src="/icons/view.svg" alt="izlenme" />
-//     <div>132.000</div>
-//   </div>
-
-//   <div className={styles.bottomInfo}>
-//     <img src="/icons/thumb_up.svg" alt="beğeni" />
-//     <div>32K</div>
-//   </div>
-// </div>

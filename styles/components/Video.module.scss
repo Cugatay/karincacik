@@ -123,5 +123,43 @@
                 font-size: 28px;
             }
         }
+
+        .top {
+            .play {
+                transition: all 0.35s;
+                margin-bottom: -200px;
+                opacity: 0;
+                // transform: scale(0);
+
+                &:hover {
+                    background-color: rgba(158, 158, 158, 0.8);
+                    backdrop-filter: blur(5px);
+                }
+            }
+        }
+
+        .bottom {
+            transition: all 0.35s;
+            margin-top: -60px;
+            opacity: 0;
+            overflow: hidden;
+            transform: scale(0);
+        }
+
+        &:hover {
+            .top {
+                .play {
+                    margin-bottom: 0px;
+                    opacity: 1;
+                    // transform: scale(1);
+                }
+            }
+
+            .bottom {
+                margin-top: 0px;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 }
