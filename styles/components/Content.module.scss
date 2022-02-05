@@ -8,6 +8,7 @@
     margin: 0 auto;
     margin-bottom: 60px;
     max-width: 1600px;
+    position: relative;
 
     @media only screen and (min-width: $tablet) {
         margin-bottom: 80px;
@@ -26,12 +27,61 @@
         margin-bottom: 20px;
     }
 
-    .blogContainer {
+    .itemContainer {
         @media only screen and (min-width: $tablet) {
             display: flex;
             flex-wrap: wrap;
         }
         display: block;
         flex-wrap: unset;
+        position: relative;
+    }
+    
+    .scrollable {
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }    
+        -ms-overflow-style: none;
+        scrollbar-width: none;    
+    }
+
+    .arrow {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+        border: 0.5px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(2px);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        opacity: 1;
+        transition: all .2s;
+        cursor: pointer;
+
+        &:hover {
+            background-position-x: -58px;
+            backdrop-filter: blur(5px);
+            transform: scale(1.1);
+        }
+
+        // &:focus {
+        //     transform: scale(0.9);
+        // }
+
+        img {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    .scrolledArrow {
+        opacity: 0;
+        pointer-events: none;
     }
 }

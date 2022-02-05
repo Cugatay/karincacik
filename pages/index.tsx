@@ -7,6 +7,7 @@ import BlogItem from '../components/BlogItem';
 import Content from '../components/Content';
 import useIsMobile from '../hooks/useIsMobile';
 import Video from '../components/Video';
+import QuestionItem from '../components/QuestionItem';
 
 const data = [
   {}, {}, {}, {}, {},
@@ -36,7 +37,7 @@ export default function Home() {
           </>
         </Content>
 
-        <Content title="Videolar">
+        <Content scrollable title="Videolar">
           <div style={{
             display: 'flex', justifyContent: isMobile ? 'center' : 'space-between', width: '100%',
           }}
@@ -49,22 +50,21 @@ export default function Home() {
               <>
                 <Video />
                 <Video />
+                <Video />
+                <Video />
+                <Video />
               </>
               )
             }
+          </div>
+        </Content>
+
+        <Content title="Sorular">
+          <div style={{ padding: '0 12px', width: '100%' }}>
+            <QuestionItem />
           </div>
         </Content>
       </main>
     </div>
   );
 }
-
-/* <Carousel  swipeable>
-  <div style={{ width: 336, height: 526, backgroundColor: 'blue' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'red' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'blue' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'red' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'blue' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'red' }}>lkjlk</div>
-  <div style={{ width: 336, height: 526, backgroundColor: 'blue' }}>lkjlk</div>
-</Carousel> */

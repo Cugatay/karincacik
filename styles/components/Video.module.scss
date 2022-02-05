@@ -6,10 +6,11 @@
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     border: 0.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    padding: 0 12px;
+    padding: 0 13px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    min-width: 336px;
 
     .top {
         position: relative;
@@ -126,7 +127,7 @@
 
         .top {
             .play {
-                transition: all 0.35s;
+                transition: margin-bottom 0.3s, opacity 0.3s, background-color 0.3s, backdrop-filter 0.3s;
                 margin-bottom: -200px;
                 opacity: 0;
                 // transform: scale(0);
@@ -139,7 +140,7 @@
         }
 
         .bottom {
-            transition: all 0.35s;
+            transition: margin-top 0.3s, opacity 0.3s, transform 0.3s;
             margin-top: -60px;
             opacity: 0;
             overflow: hidden;
