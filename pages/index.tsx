@@ -38,10 +38,7 @@ export default function Home() {
         </Content>
 
         <Content scrollable title="Videolar">
-          <div style={{
-            display: 'flex', justifyContent: isMobile ? 'center' : 'space-between', width: '100%',
-          }}
-          >
+          <>
             <Video />
 
             {
@@ -56,11 +53,13 @@ export default function Home() {
               </>
               )
             }
-          </div>
+          </>
         </Content>
 
         <Content title="Sorular">
-          <div style={{ padding: '0 12px', width: '100%' }}>
+          <div style={{ width: '100%' }}>
+            <QuestionItem answered />
+            <QuestionItem />
             <QuestionItem />
           </div>
         </Content>

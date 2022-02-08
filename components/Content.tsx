@@ -19,7 +19,7 @@ export default function Content({ children, title, scrollable }: Props) {
   const handleScrollRight = () => {
     scrollableRef?.current?.scrollBy({
       top: 0,
-      left: 400,
+      left: 2000,
       behavior: 'smooth',
     });
   };
@@ -44,7 +44,7 @@ export default function Content({ children, title, scrollable }: Props) {
 
       <div
         ref={scrollableRef}
-        className={clsx(styles.itemContainer, scrollable && styles.scrollable)}
+        className={clsx(styles.itemContainer, scrollable && !isMobile && styles.scrollable)}
       >
         {children}
       </div>

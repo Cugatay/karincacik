@@ -2,7 +2,7 @@
 
 .container {
     max-width: 336px;
-    margin: 0 28px;
+    margin: 0 auto;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     border: 0.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
@@ -111,7 +111,7 @@
     @media only screen and (min-width: $tablet) {
         width: 336px;
         height: 476px;
-        margin-bottom: 32px;
+        margin: 0 28px 32px 28px;
 
         .top {
             .thumbnail {
