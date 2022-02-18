@@ -1,29 +1,30 @@
 @import '../variables';
 
+// .tilt {
 .container {
+    width: 96%;
+    height: 68px;
+    margin: 0 2% 12px 2%;
+
     @media only screen and (min-width: $tablet) {
         width: 49%;
         height: 76px;
         margin: 0 0.5% 20px 0.5%;
     }
 
-    width: 96%;
-    height: 68px;
-    margin: 0 2% 12px 2%;
-    border-radius: 8px;
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
-
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-
-            // background-color: rgba(255, 255, 255, 0.1);
-            // backdrop-filter: blur(2px);
-
-    // background-size: 100%;
-    display: flex;
-    align-items: center;
-    // justify-content: space-between;
-    cursor: pointer;
-    position: relative;
+    .tilt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        border: 0.5px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(2px);
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        border-radius: 8px !important;
+    overflow: hidden;
+    }
 
     .left {
         display: flex;
@@ -132,3 +133,4 @@
         }
     }
 }
+// }

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import Tilt from 'react-parallax-tilt';
 import styles from '../styles/components/BlogItem.module.scss';
 import useIsMobile from '../hooks/useIsMobile';
 
@@ -16,6 +17,7 @@ export default function BlogItem({ index, selected, setSelected }: Props) {
   const isSelected = selected === index;
 
   const [isHovering, setIsHovering] = useState(false);
+
   return (
     <motion.div
       onHoverStart={() => setIsHovering(true)}
@@ -24,40 +26,45 @@ export default function BlogItem({ index, selected, setSelected }: Props) {
       onClick={() => setSelected(index)}
       className={styles.container}
     >
-      <div className={styles.left} id={!isSelected ? 'not_selected' : null}>
-        <motion.img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Brachypelma_smithi_2009_G03.jpg/1200px-Brachypelma_smithi_2009_G03.jpg"
-          alt="Blog"
-          animate={isSelected ? { width: 180, height: 180, marginLeft: isMobile ? 0 : '20px' } : {}}
-        />
-        <motion.div className={styles.info} animate={isSelected ? { marginLeft: isMobile ? 0 : '24px' } : {}}>
-          <motion.div animate={isSelected ? { fontSize: '32px', marginTop: isMobile ? '24px' : 0 } : {}} className={styles.title}>Tarantula Gözü</motion.div>
-          {isSelected
+      <Tilt
+        className={styles.tilt}
+        // tiltReverse
+        // glareEnable
+        // glareMaxOpacity={0.1}
+        // glareColor="lightblue"
+        // glarePosition="all"
+        tiltMaxAngleX={2}
+        tiltMaxAngleY={2}
+        // scale={1.05}
+      >
+        <div className={styles.left} id={!isSelected ? 'not_selected' : null}>
+          <motion.img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Brachypelma_smithi_2009_G03.jpg/1200px-Brachypelma_smithi_2009_G03.jpg"
+            alt="Blog"
+            animate={isSelected ? { width: 180, height: 180, marginLeft: isMobile ? 0 : '20px' } : {}}
+          />
+          <motion.div className={styles.info} animate={isSelected ? { marginLeft: isMobile ? 0 : '24px' } : {}}>
+            <motion.div animate={isSelected ? { fontSize: '32px', marginTop: isMobile ? '24px' : 0 } : {}} className={styles.title}>Tarantula Gözü</motion.div>
+            {isSelected
             && (
-            <div>
-              <motion.div
-                initial={{ scale: 0, y: 200 /* opacity: 0 */ }}
-                animate={{ scale: 1, y: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                className={styles.author}
-              >
+            <motion.div
+              initial={{ scale: 0, y: 200, opacity: 1 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className={styles.author}>
                 Yazar: CagatayXx
-              </motion.div>
-              <motion.div
-                initial={{ scale: 0, y: 200 /* opacity: 0 */ }}
-                animate={{ scale: 1, y: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                className={styles.text}
-              >
+              </div>
+              <div className={styles.text}>
                 laksd jflkj lkja lsdkjf lksaj df lksaj
                 lkasdflkj alskdjflkasjd lkasjdflk jlksajflkj
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
             )}
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
 
-      {
+        {
         !isMobile
         && (
         <div className={styles.right}>
@@ -66,6 +73,7 @@ export default function BlogItem({ index, selected, setSelected }: Props) {
         </div>
         )
       }
+      </Tilt>
     </motion.div>
   );
 }

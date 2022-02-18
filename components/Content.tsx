@@ -8,9 +8,12 @@ interface Props {
     scrollable?: boolean;
     // eslint-disable-next-line no-undef
     children: JSX.Element;
+    aos: {anim: string, delay: number, duration?: number};
 }
 
-export default function Content({ children, title, scrollable }: Props) {
+export default function Content({
+  children, title, scrollable, aos,
+}: Props) {
   const isMobile = useIsMobile();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +40,25 @@ export default function Content({ children, title, scrollable }: Props) {
   }, [scrollableRef]);
 
   return (
+  // <Tilt options={{ scale: 1, max: 2 }}>
+  // <Tilt
+  //   tiltMaxAngleX={0}
+  //   tiltMaxAngleY={0}
+  //   scale={1.05}
+  //   glareEnable
+  //   glareMaxOpacity={0.9}
+  //   glareColor="lightblue"
+  //   glarePosition="all"
+  //   className={styles.tilt}
+  // >
     <div
+      data-aos={aos.anim}
+      data-aos-delay={aos.delay}
+      data-aos-duration={aos.duration}
       className={styles.content}
     >
+      {/* <Tilt glareEnable glareMaxOpacity={0.9}
+      glareColor="lightblue" glarePosition="all" tiltEnable={false}> */}
       <div className={styles.header}>{title}</div>
 
       <div
@@ -54,6 +73,7 @@ export default function Content({ children, title, scrollable }: Props) {
         && <button type="button" onClick={handleScrollRight} className={clsx(styles.arrow, isScrolled && styles.scrolledArrow)}><img src="/icons/chevron_right.svg" alt="daha fazla" /></button>
         }
     </div>
+  // </Tilt>
   );
 }
 
